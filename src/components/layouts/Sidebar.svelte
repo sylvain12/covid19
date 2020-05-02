@@ -1,3 +1,15 @@
+<script>
+  import { createEventDispatcher } from "svelte";
+
+  let dispatch = createEventDispatcher();
+
+  function showView(e) {
+    dispatch("showview", e);
+  }
+
+  export let activeView = "dashboard";
+</script>
+
 <style>
   .sidebar {
     grid-column: 1 / 2;
@@ -16,7 +28,7 @@
     justify-content: center;
     align-items: center;
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 1em 0;
   }
 
@@ -62,25 +74,34 @@
 
 <aside class="sidebar">
   <div class="sidebar__brand">
-    <span>COVID19</span>
+    <span>INFOCOVID-19</span>
   </div>
 
   <ul class="sidebar__menu">
 
     <li class="sidebar__item">
-      <span class="sidebar__link active">
+      <span
+        on:click={showView}
+        class="sidebar__link"
+        class:active={activeView == 'dashboard'}>
         <i class="icofont-ui-home" />
-        Dashborad
+        Dashboard
       </span>
     </li>
     <li class="sidebar__item">
-      <span class="sidebar__link">
+      <span
+        on:click={showView}
+        class="sidebar__link"
+        class:active={activeView == 'resultats'}>
         <i class="icofont-table" />
         Resultats
       </span>
     </li>
     <li class="sidebar__item">
-      <span class="sidebar__link">
+      <span
+        on:click={showView}
+        class="sidebar__link"
+        class:active={activeView == 'cartographie'}>
         <i class="icofont-map" />
         Cartographie
       </span>

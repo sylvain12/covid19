@@ -13,9 +13,10 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 1.6rem;
   line-height: 1.7;
+  background: #f4f4f4;
 }
 
 a {
@@ -50,6 +51,6 @@ ul {
 .grid-wrapper {
   display: grid;
   grid-template-columns: 150px 1fr;
-  grid-template-rows: 6rem auto;
+  grid-template-rows: 6rem auto 5rem;
   grid-auto-flow: row;
 }
