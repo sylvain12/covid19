@@ -1,0 +1,6 @@
+{
+  "alias": [
+    { "branch": "develop", "alias": "covid19-ci.sylvainka12.now.sh/" },
+    { "branch": "master", "alias": "covid19-ci.now.sh" }
+  ]
+}

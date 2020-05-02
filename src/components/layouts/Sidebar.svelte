@@ -85,11 +85,11 @@
         Cartographie
       </span>
     </li>
-    <!-- <li class="sidebar__item">
+    <li class="sidebar__item">
       <span class="sidebar__link">
         <i class="icofont-chart-line" />
         Graphique
       </span>
-    </li> -->
+    </li>
   </ul>
 </aside>
