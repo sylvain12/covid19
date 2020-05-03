@@ -26,11 +26,6 @@
     <p>@{currentDate} coryright, Tous droits réservés</p>
 
     <p>
-      <a target="_blank" href="http://info-covid19.gouv.ci/">
-        info-covid19.gouv.ci
-      </a>
-    </p>
-    <p>
 
       <a target="_blank" href="https://web.facebook.com/Mshpci?_rdc=1&_rdr">
         Ministère de la Santé et de l'Hygiène Publique
@@ -47,6 +42,10 @@
       <i class="icofont-heart text-danger" />
       By
       <a target="_blank" href="https://github.com/sylvain12">Sylvain Kadjo</a>
+      in
+      <img
+        src="/images/cote-d-ivoire-flag-round-icon-16.png"
+        alt="Flag of Côte d'Ivoire" />
     </p>
   </div>
 </footer>

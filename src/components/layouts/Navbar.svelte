@@ -53,6 +53,8 @@
     margin-right: 0.5em;
     font-size: 1.5rem;
     flex: 1;
+    line-height: 1.7;
+    text-align: center;
   }
 
   .mr-2 {
@@ -81,6 +83,14 @@
           <i class="icofont-ui-dial-phone text-primary" />
           20250040 / 20221633 / 03799144
         </span>
+
+        <span class="mr-2">
+          <i class="icofont-world text-primary" />
+          <a target="_blank" href="http://info-covid19.gouv.ci/">
+            info-covid19.gouv.ci
+          </a>
+        </span>
+
       </h3>
 
       <!-- <ul class="nav__info-list">
