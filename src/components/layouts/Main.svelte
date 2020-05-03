@@ -1,7 +1,7 @@
 <style>
   .main-content {
-    grid-column: 2 / -1;
-
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
     padding: 2em 0;
   }
 </style>

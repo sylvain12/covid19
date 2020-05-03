@@ -40,11 +40,11 @@ ul {
   list-style: none;
 }
 
-.container {
+/* .container {
   max-width: 80%;
   width: 114rem;
   margin: 0 auto;
-}
+} */
 
 /* grid system */
 
@@ -53,4 +53,46 @@ ul {
   grid-template-columns: 150px 1fr;
   grid-template-rows: 6rem auto 5rem;
   grid-auto-flow: row;
+  min-height: 100vh;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.text-bold {
+  font-weight: 500;
+}
+
+.fs-big {
+  font-size: 2rem;
+}
+
+.icon-happy {
+  color: #289f0b;
+}
+
+.icon-sad {
+  color: #d3af36;
+}
+
+.icon-cry {
+  color: #b51818;
+}
+
+input {
+  padding: 0.5em 1.2rem;
+  width: 100%;
+  border: 1px solid #f4f4f4;
+  outline: none;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+input:focus {
+  border-color: rgb(0, 100, 200);
+}
+
+::placeholder {
+  color: #ccc;
 }

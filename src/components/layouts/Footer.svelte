@@ -6,8 +6,8 @@
   .footer {
     grid-column: 2 / -1;
     grid-row: 3 / 4;
-
     font-weight: 200;
+    font-size: 1.3rem;
   }
 
   .footer__detail {
@@ -26,8 +26,27 @@
     <p>@{currentDate} coryright, Tous droits réservés</p>
 
     <p>
+      <a target="_blank" href="http://info-covid19.gouv.ci/">
+        info-covid19.gouv.ci
+      </a>
+    </p>
+    <p>
+
+      <a target="_blank" href="https://web.facebook.com/Mshpci?_rdc=1&_rdr">
+        Ministère de la Santé et de l'Hygiène Publique
+      </a>
+    </p>
+
+    <p>
       COVID API Source:
-      <a target="_blank" href="covid19api.com">covid19api.com</a>
+      <a target="_blank" href="https://covid19api.com/">covid19api.com</a>
+    </p>
+
+    <p>
+      Build with
+      <i class="icofont-heart text-danger" />
+      By
+      <a target="_blank" href="https://github.com/sylvain12">Sylvain Kadjo</a>
     </p>
   </div>
 </footer>

@@ -9,13 +9,14 @@
   .nav__menu {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     height: 100%;
   }
 
   .nav__info {
     display: flex;
     align-items: center;
+    width: 100%;
   }
 
   .nav__info-list {
@@ -50,7 +51,13 @@
 
   .nav__info-title {
     margin-right: 0.5em;
-    font-size: 3rem;
+    font-size: 1.5rem;
+    flex: 1;
+  }
+
+  .mr-2 {
+    display: inline-block;
+    margin-right: 4em;
   }
 </style>
 
@@ -58,11 +65,25 @@
   <div class="nav__menu container">
     <div class="nav__info">
       <h3 class="nav__info-title">
-        COTE D'IVOIRE
+        Ensemble contre le coronavirus
         <span>:</span>
+        <span class="mr-2">
+          <i class="icofont-mobile-phone text-primary" />
+          143 / 101 /125 / 119
+        </span>
+
+        <span class="mr-2">
+          <i class="icofont-ui-message text-primary" />
+          SMS: evonyer coronavirus au 1366
+        </span>
+
+        <span class="mr-2">
+          <i class="icofont-ui-dial-phone text-primary" />
+          20250040 / 20221633 / 03799144
+        </span>
       </h3>
 
-      <ul class="nav__info-list">
+      <!-- <ul class="nav__info-list">
         <li class="nav__info-item sad">
           <i class="icofont-sad" />
           <span class="nav__info-text">1333</span>
@@ -77,7 +98,7 @@
           <span class="nav__info-text">15</span>
         </li>
 
-      </ul>
+      </ul> -->
     </div>
   </div>
 </nav>

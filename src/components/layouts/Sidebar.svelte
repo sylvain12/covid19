@@ -12,15 +12,15 @@
 
 <style>
   .sidebar {
-    grid-column: 1 / 2;
+    grid-column: 1 / span 1;
     grid-row: 1 / -1;
-    background: linear-gradient(
-      to bottom,
-      rgb(23, 75, 118),
-      rgba(45, 150, 236)
-    );
+    background: linear-gradient(to bottom, rgb(23, 75, 118), rgb(45, 150, 236));
 
-    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 150px;
+    min-height: 100vh;
   }
 
   .sidebar__brand {
@@ -48,7 +48,6 @@
     padding: 1em;
     color: #fff;
     text-transform: uppercase;
-    /* border: 1px solid; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,6 +96,7 @@
         Resultats
       </span>
     </li>
+    <!-- 
     <li class="sidebar__item">
       <span
         on:click={showView}
@@ -106,7 +106,7 @@
         Cartographie
       </span>
     </li>
-    <!-- <li class="sidebar__item">
+    <li class="sidebar__item">
       <span class="sidebar__link">
         <i class="icofont-chart-line" />
         Graphique
