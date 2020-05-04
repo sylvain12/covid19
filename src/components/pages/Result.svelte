@@ -120,19 +120,21 @@
                 {covid.NewConfirmed}
               </td>
               <td class="text-right text-warning text-bold fs-big">
-                {covid.TotalConfirmed}
+                <span class="badge badge-warning text-white">
+                  {covid.TotalConfirmed}
+                </span>
               </td>
               <td class="text-right text-primary text-bold fs-big">
                 {covid.NewDeaths}
               </td>
               <td class="text-right text-danger text-bold fs-big">
-                {covid.TotalDeaths}
+                <span class="badge badge-danger">{covid.TotalDeaths}</span>
               </td>
               <td class="text-right text-primary text-bold fs-big">
                 {covid.NewRecovered}
               </td>
               <td class="text-right text-success text-bold fs-big">
-                {covid.TotalRecovered}
+                <span class="badge badge-success">{covid.TotalRecovered}</span>
               </td>
             </tr>
           {/each}
