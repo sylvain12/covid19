@@ -38,6 +38,10 @@
     font-size: 2rem;
   }
 
+  .flag-icon {
+    width: 2.5rem;
+  }
+
   /* Media queries */
   @media (max-width: 576px) {
     .table-fixed {
@@ -75,7 +79,7 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <!-- <th scope="col">#</th> -->
+            <th scope="col">#</th>
             <!-- <th scope="col">DATE</th> -->
             <th scope="col">PAYS</th>
             <th scope="col text-right">NOUVEAU CAS</th>
@@ -89,7 +93,25 @@
         <tbody>
           {#each covidinfobycontry as covid}
             <tr>
-              <!-- <th scope="row">{i + 1}</th> -->
+              <th scope="row">
+                {#if covid.CountryCode == 'GF' || covid.CountryCode == 'GP' || covid.CountryCode == 'YT'}
+                  <img
+                    class="flag-icon"
+                    src="/images/png/FR.png"
+                    alt="Country flag" />
+                {:else if covid.CountryCode == 'HM'}
+                  <img
+                    class="flag-icon"
+                    src="/images/png/AU.png"
+                    alt="Country flag" />
+                {:else}
+                  <img
+                    class="flag-icon"
+                    src="/images/png/{covid.CountryCode}.png"
+                    alt="Country flag" />
+                {/if}
+
+              </th>
               <!-- <td>{covid.Date}</td> -->
               <td class="text-left text-upper text-bold">
                 <strong>{covid.Country}</strong>
