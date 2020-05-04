@@ -25,7 +25,7 @@
   $: filtredData = $covidGlobal.Countries;
   let toggleNav = true;
 
-  let search = "";
+  $: search = "";
 
   if (!localStorage.getItem("view")) {
     localStorage.setItem("view", "dashboard");
@@ -69,6 +69,7 @@
   });
 
   function handleFiltred(e) {
+    console.log(search);
     if (e.detail.target.value == "") {
       filtredData = $covidGlobal.Countries;
     } else {
@@ -117,9 +118,9 @@
 </script>
 
 <style>
-  #map {
+  /* #map {
     height: 100%;
-  }
+  } */
 </style>
 
 <div class="grid-wrapper">
@@ -147,7 +148,7 @@
         covidCI={$covidCI}
         covidGlobal={$covidGlobal.Global}
         covidinfobycontry={filtredData}
-        {search}
+        bind:search
         on:filtred={handleFiltred} />
     {/if}
 
