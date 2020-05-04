@@ -8,6 +8,7 @@
   }
 
   export let activeView = "dashboard";
+  export let isToggled = true;
 </script>
 
 <style>
@@ -21,6 +22,7 @@
     top: 0;
     width: 150px;
     min-height: 100vh;
+    transition: all 0.2s;
   }
 
   .sidebar__brand {
@@ -69,9 +71,32 @@
     font-size: 3.5rem;
     margin-bottom: 0.2em;
   }
+
+  /* Media queries */
+  @media (max-width: 576px) {
+    .sidebar {
+      top: 6rem;
+      width: 100%;
+      height: calc(100vh - 6rem);
+      z-index: 99;
+    }
+
+    .sidebar.nav-mobile {
+      transform: translateX(-100%);
+    }
+
+    .sidebar__link {
+      display: flex !important;
+      justify-content: space-between;
+    }
+
+    .sidebar__link i {
+      font-size: 1.5rem;
+    }
+  }
 </style>
 
-<aside class="sidebar">
+<aside class="sidebar" class:nav-mobile={isToggled == true}>
   <div class="sidebar__brand">
     <span>INFOCOVID-19</span>
   </div>
@@ -79,13 +104,13 @@
   <ul class="sidebar__menu">
 
     <li class="sidebar__item">
-      <span
+      <div
         on:click={showView}
         class="sidebar__link"
         class:active={activeView == 'dashboard'}>
         <i class="icofont-ui-home" />
         Dashboard
-      </span>
+      </div>
     </li>
     <li class="sidebar__item">
       <span

@@ -15,9 +15,9 @@
     CityCode: "",
     Lat: "0",
     Lon: "0",
-    Confirmed: 1333,
-    Deaths: 15,
-    Recovered: 597,
+    Confirmed: 0,
+    Deaths: 0,
+    Recovered: 0,
     Active: 0,
     Date: "2020-05-01T00:00:00Z"
   };

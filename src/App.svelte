@@ -1,6 +1,6 @@
 <script>
   // Import statements
-  import { onMount } from "svelte";
+  import { onMount, onDestroy } from "svelte";
   import Sidebar from "./components/layouts/Sidebar.svelte";
   import Navbar from "./components/layouts/Navbar.svelte";
   import Main from "./components/layouts/Main.svelte";
@@ -23,6 +23,7 @@
   let isCompleted = false;
 
   $: filtredData = $covidGlobal.Countries;
+  let toggleNav = true;
 
   let search = "";
 
@@ -62,6 +63,11 @@
     return () => console.log("Destroy");
   });
 
+  onDestroy(() => {
+    localStorage.removeItem("view");
+    console.log(localStorage.getItem("view"));
+  });
+
   function handleFiltred(e) {
     if (e.detail.target.value == "") {
       filtredData = $covidGlobal.Countries;
@@ -74,8 +80,19 @@
     }
   }
 
+  function handleToggleNav() {
+    toggleNav = !toggleNav;
+  }
+
   function handleShowDashboard(e) {
     let view = e.detail.target.innerText.toLowerCase();
+    const asideParent =
+      e.detail.target.parentElement.parentElement.parentElement;
+    if (!asideParent.classList.contains("nav-mobile")) {
+      asideParent.classList.add("nav-mobile");
+      toggleNav = true;
+    }
+
     activeView = view;
     switch (view) {
       case "dashboard":
@@ -106,16 +123,19 @@
 </style>
 
 <div class="grid-wrapper">
-  <Sidebar on:showview={handleShowDashboard} {activeView} />
-  <Navbar />
+  <Sidebar
+    isToggled={toggleNav}
+    on:showview={handleShowDashboard}
+    {activeView} />
+  <Navbar on:toggleNav={handleToggleNav} />
   <Main>
 
     {#if !isCompleted}
       <div class="alert alert-warning alert-dismissible fade show" role="alert">
         <i class="icofont-warning" />
         <strong>Attention!</strong>
-        La plateforme est en developpement, les données pourront à tout moment
-        changer.
+        La plateforme est en développement, les données ou l'interface pourront
+        à tout moment évoluer.
       </div>
     {/if}
 

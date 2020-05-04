@@ -1,3 +1,12 @@
+<script>
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
+
+  function toggleNav() {
+    dispatch("toggleNav");
+  }
+</script>
+
 <style>
   .nav {
     grid-column: 2 / -1;
@@ -9,8 +18,9 @@
   .nav__menu {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     height: 100%;
+    width: 100%;
   }
 
   .nav__info {
@@ -19,7 +29,7 @@
     width: 100%;
   }
 
-  .nav__info-list {
+  /* .nav__info-list {
     display: flex;
     align-items: center;
   }
@@ -47,7 +57,7 @@
 
   .nav__info-item.sad i {
     color: #d3af36;
-  }
+  } */
 
   .nav__info-title {
     margin-right: 0.5em;
@@ -61,10 +71,67 @@
     display: inline-block;
     margin-right: 4em;
   }
+
+  .menu-humberger {
+    display: inline-block;
+    background: transparent;
+    border: none;
+    font-size: 4rem;
+    cursor: pointer;
+    outline: none;
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .menu-humberger:hover {
+    transform: scale(1.1);
+  }
+
+  .nav__mobile {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    display: none;
+  }
+
+  /* Media queries */
+  @media (max-width: 576px) {
+    .nav {
+      grid-column: 1 / -1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      width: 100%;
+    }
+    .nav__info {
+      display: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .nav__menu {
+      justify-content: space-between;
+    }
+    .nav__mobile {
+      display: flex;
+    }
+  }
 </style>
 
 <nav class="nav">
   <div class="nav__menu container">
+
+    <div class="nav__mobile">
+      <button class="menu-humberger" on:click={toggleNav}>
+        <i class="icofont-navigation-menu" />
+      </button>
+      <p>INFOCOVID-19</p>
+    </div>
+
     <div class="nav__info">
       <h3 class="nav__info-title">
         Ensemble contre le coronavirus

@@ -30,8 +30,28 @@
     top: 0;
   }
 
+  .table {
+    width: 100%;
+  }
+
   h1 {
     font-size: 2rem;
+  }
+
+  /* Media queries */
+  @media (max-width: 576px) {
+    .table-fixed {
+      overflow-x: auto !important;
+    }
+
+    .table-fixed thead th {
+      position: sticky !important;
+      top: 0;
+    }
+
+    .table {
+      display: block;
+    }
   }
 </style>
 
@@ -48,52 +68,55 @@
   </div>
 </div>
 
-<div class="row table-fixed">
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12">
 
-  <div class="card " style="width: 100%;">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <!-- <th scope="col">#</th> -->
-          <!-- <th scope="col">DATE</th> -->
-          <th scope="col">PAYS</th>
-          <th scope="col text-right">NOUVEAU CAS</th>
-          <th scope="col text-right">TOTAL CAS</th>
-          <th scope="col text-right">NOUVEAU DECES</th>
-          <th scope="col text-right">TOTAL DECES</th>
-          <th scope="col text-right">NOUVEAU GUERISON</th>
-          <th scope="col text-right">TOTAL GUERISON</th>
-        </tr>
-      </thead>
-      <tbody>
-        {#each covidinfobycontry as covid}
+    <div class="card table-fixed" style="width: 100%;">
+      <table class="table table-striped">
+        <thead>
           <tr>
-            <!-- <th scope="row">{i + 1}</th> -->
-            <!-- <td>{covid.Date}</td> -->
-            <td class="text-left text-upper text-bold">
-              <strong>{covid.Country}</strong>
-            </td>
-            <td class="text-right text-primary text-bold fs-big">
-              {covid.NewConfirmed}
-            </td>
-            <td class="text-right text-warning text-bold fs-big">
-              {covid.TotalConfirmed}
-            </td>
-            <td class="text-right text-primary text-bold fs-big">
-              {covid.NewDeaths}
-            </td>
-            <td class="text-right text-danger text-bold fs-big">
-              {covid.TotalDeaths}
-            </td>
-            <td class="text-right text-primary text-bold fs-big">
-              {covid.NewRecovered}
-            </td>
-            <td class="text-right text-success text-bold fs-big">
-              {covid.TotalRecovered}
-            </td>
+            <!-- <th scope="col">#</th> -->
+            <!-- <th scope="col">DATE</th> -->
+            <th scope="col">PAYS</th>
+            <th scope="col text-right">NOUVEAU CAS</th>
+            <th scope="col text-right">TOTAL CAS</th>
+            <th scope="col text-right">NOUVEAU DECES</th>
+            <th scope="col text-right">TOTAL DECES</th>
+            <th scope="col text-right">NOUVEAU GUERISON</th>
+            <th scope="col text-right">TOTAL GUERISON</th>
           </tr>
-        {/each}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {#each covidinfobycontry as covid}
+            <tr>
+              <!-- <th scope="row">{i + 1}</th> -->
+              <!-- <td>{covid.Date}</td> -->
+              <td class="text-left text-upper text-bold">
+                <strong>{covid.Country}</strong>
+              </td>
+              <td class="text-right text-primary text-bold fs-big">
+                {covid.NewConfirmed}
+              </td>
+              <td class="text-right text-warning text-bold fs-big">
+                {covid.TotalConfirmed}
+              </td>
+              <td class="text-right text-primary text-bold fs-big">
+                {covid.NewDeaths}
+              </td>
+              <td class="text-right text-danger text-bold fs-big">
+                {covid.TotalDeaths}
+              </td>
+              <td class="text-right text-primary text-bold fs-big">
+                {covid.NewRecovered}
+              </td>
+              <td class="text-right text-success text-bold fs-big">
+                {covid.TotalRecovered}
+              </td>
+            </tr>
+          {/each}
+        </tbody>
+      </table>
+    </div>
+
   </div>
 </div>

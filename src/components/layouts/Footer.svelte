@@ -19,11 +19,24 @@
   .footer__detail a {
     text-decoration: underline;
   }
+
+  /* Media queries */
+  @media (max-width: 576px) {
+    .footer {
+      grid-column: 1 / -1;
+    }
+
+    .footer__detail {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 </style>
 
 <footer class="footer">
   <div class="footer__detail container">
-    <p>@{currentDate} coryright, Tous droits réservés</p>
+    <p>@{currentDate} coryright , Tous droits réservés</p>
 
     <p>
 
@@ -41,7 +54,9 @@
       Build with
       <i class="icofont-heart text-danger" />
       By
-      <a target="_blank" href="https://github.com/sylvain12">Sylvain Kadjo</a>
+      <a target="_blank" href="https://github.com/sylvain12">
+        Essentiel Digital
+      </a>
       in
       <img
         src="/images/cote-d-ivoire-flag-round-icon-16.png"

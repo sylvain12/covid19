@@ -96,3 +96,14 @@ input:focus {
 ::placeholder {
   color: #ccc;
 }
+
+/* Media queries */
+@media (max-width: 576px) {
+  .grid-wrapper {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 6rem auto 5rem;
+    grid-auto-flow: row;
+    min-height: 100vh;
+  }
+}
